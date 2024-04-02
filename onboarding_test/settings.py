@@ -49,6 +49,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'training.middleware.DefaultLoginUserMiddleware',
 ]
 
 ROOT_URLCONF = "onboarding_test.urls"
@@ -183,3 +184,20 @@ REST_FRAMEWORK = {
 }
 
 DEFAULT_MIDDLEWARE_USER_EMAIL = 'abc@example.com'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
+
+from corsheaders.defaults import default_headers
+
+CORS_ALLOW_HEADERS = (
+    *default_headers,
+)
+
+from corsheaders.defaults import default_methods
+
+CORS_ALLOW_METHODS = (
+    *default_methods,
+)

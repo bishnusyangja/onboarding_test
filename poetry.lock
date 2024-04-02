@@ -72,6 +72,14 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-cors"
+version = "0.1"
+description = "Django utilities for handling Cross-Origin Resource Sharing."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "djangorestframework"
 version = "3.15.1"
 description = "Web APIs for Django, made easy."
@@ -173,7 +181,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "7d7c4234545e354cf5c3e720f1499b24da582ad52935bfa39d8f45c25db51762"
+content-hash = "60343533050286558784588bb15403c81db30e56e2340c35dc429a81058447bb"
 
 [metadata.files]
 asgiref = []
@@ -181,6 +189,7 @@ black = []
 click = []
 colorama = []
 django = []
+django-cors = []
 djangorestframework = []
 model-bakery = []
 mypy-extensions = []
