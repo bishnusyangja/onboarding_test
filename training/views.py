@@ -9,20 +9,18 @@ from training.serializers import UserActivitySerializer, ActivitySerializer
 # Create your views here.
 
 class UserActivityAPIView(ModelViewSet):
-    permission_classes = (IsAuthenticated,)
-    # permission_classes = (AllowAny,)
+    permission_classes = (AllowAny,)
     serializer_class = UserActivitySerializer
     queryset = UserActivity.objects.none()
 
     def get_queryset(self):
-        if self.request.user.is_staff:
-            return UserActivity.objects.all()
-        return UserActivity.objects.filter(user=self.request.user)
-        # return UserActivity.objects.all()
+        # if self.request.user.is_staff:
+        #     return UserActivity.objects.all()
+        # return UserActivity.objects.filter(user=self.request.user)
+        return UserActivity.objects.all()
 
 
 class ActivityAPIView(ModelViewSet):
-    # permission_classes = (IsAuthenticated,)
     permission_classes = (AllowAny,)
     serializer_class = ActivitySerializer
     queryset = Activity.objects.all()

@@ -15,6 +15,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
+from corsheaders.defaults import default_headers
+from corsheaders.defaults import default_methods
 
 
 # Quick-start development settings - unsuitable for production
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -191,13 +194,13 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
 ]
 
-from corsheaders.defaults import default_headers
+
 
 CORS_ALLOW_HEADERS = (
     *default_headers,
 )
 
-from corsheaders.defaults import default_methods
+
 
 CORS_ALLOW_METHODS = (
     *default_methods,

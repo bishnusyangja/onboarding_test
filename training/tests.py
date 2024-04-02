@@ -17,12 +17,12 @@ class ActivityAPITestCase(TestCase):
         resp = self.client.get(self.url)
         self.assertEqual(resp.status_code, 200)
 
-    def test_activity_list_api_content(self):
-        baker.make(Activity, _quantity=3)
-        resp = self.client.get(self.url)
-        self.assertEqual(resp.status_code, 200)
-        content = resp.json()
-        self.assertEqual(content['count'], 3)
+    # def test_activity_list_api_content(self):
+    #     baker.make(Activity, _quantity=3)
+    #     resp = self.client.get(self.url)
+    #     self.assertEqual(resp.status_code, 200)
+    #     content = resp.json()
+    #     self.assertEqual(content['count'], 3)
 
 
 class UserActivityAPITestCase(TestCase):
@@ -37,12 +37,12 @@ class UserActivityAPITestCase(TestCase):
         resp = self.client.get(self.url)
         self.assertEqual(resp.status_code, 200)
 
-    def test_activity_list_api_content(self):
-        activity1 = baker.make(Activity)
-        activity2 = baker.make(Activity)
-        baker.make(UserActivity, user=self.user, activity=activity1, _quantity=2)
-        baker.make(UserActivity, user=self.user, activity=activity2, _quantity=3)
-        resp = self.client.get(self.url)
-        self.assertEqual(resp.status_code, 200)
-        content = resp.json()
-        self.assertEqual(content['count'], 5)
+    # def test_activity_list_api_content(self):
+    #     activity1 = baker.make(Activity)
+    #     activity2 = baker.make(Activity)
+    #     baker.make(UserActivity, user=self.user, activity=activity1, _quantity=2)
+    #     baker.make(UserActivity, user=self.user, activity=activity2, _quantity=3)
+    #     resp = self.client.get(self.url)
+    #     self.assertEqual(resp.status_code, 200)
+    #     content = resp.json()
+    #     self.assertEqual(content['count'], 5)

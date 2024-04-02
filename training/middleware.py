@@ -7,7 +7,7 @@ class DefaultLoginUserMiddleware:
 
     def get_default_user(self):
         try:
-            user = User.objects.get(email=settings.DEFAULT_MIDDLEWARE_USER_EMAIL)
+            user = User.objects.filter(email=settings.DEFAULT_MIDDLEWARE_USER_EMAIL).first()
         except User.DoesNotExist:
             user = User.objects.first()
         return user
