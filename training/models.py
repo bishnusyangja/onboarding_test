@@ -31,6 +31,15 @@ class UserActivity(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.activity.name}"
 
+    def user_dict(self):
+        return {'id': self.user.id, 'name': '{} {} -- {}'.format(self.user.first_name, self.user.last_name, self.user.email)}
+
+    def activity_dict(self):
+        return {'id': self.activity.id, 'name': self.activity.name}
+
+    def get_score(self):
+        return do_training()
+
 
 class UserActivityLog(models.Model):
     user_activity = models.ForeignKey(UserActivity, on_delete=models.CASCADE)
