@@ -95,3 +95,18 @@ Keep in mind that this is not a way to skip the process, please do not ask.
 I also won't answer question of "What should I focus on?" - the task is
 very intentionally vague, and I want to see how you navigate this on your own,
 as that is a big part of the job.
+
+
+# Answers By Bishnu
+## For Backend
+- `python manage.py load_samples` will load sample data just to view data in front-end side.
+- `python manage.py test` will run the tests in the backend
+
+## For Frontend
+- navigate inside front_app folder 
+- run the command `yarn install` to install the remaining dependencies, you can run `npm instal` if you prefer npm package.
+- run `yarn start` to start the local server for front-end app.
+
+## Note
+- Within the given limited time I have just implemented the list api and rendered a bare react form, the form will not work when submitted.
+- Hope to hear from you soon.
