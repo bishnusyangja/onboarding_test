@@ -72,12 +72,16 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
-name = "django-cors"
-version = "0.1"
-description = "Django utilities for handling Cross-Origin Resource Sharing."
+name = "django-cors-headers"
+version = "4.3.1"
+description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
+
+[package.dependencies]
+asgiref = ">=3.6"
+Django = ">=3.2"
 
 [[package]]
 name = "djangorestframework"
@@ -181,7 +185,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "60343533050286558784588bb15403c81db30e56e2340c35dc429a81058447bb"
+content-hash = "73a3117dfaed436170408ff4de02ade30c59cd72da0b7c1b6a9d4f99fe8ae2d0"
 
 [metadata.files]
 asgiref = []
@@ -189,7 +193,7 @@ black = []
 click = []
 colorama = []
 django = []
-django-cors = []
+django-cors-headers = []
 djangorestframework = []
 model-bakery = []
 mypy-extensions = []
